@@ -21,6 +21,11 @@ set $powermenu ~/.config/waybar/scripts/power-menu.sh
 #Keyboard layot
 exec_always fcitx5 -d --replace
 
+#input * {
+    #xkb_layout "us,ru"
+    #xkb_options "grp:lalt_lshift_toggle"
+#}
+
 ### Idle configuration
 exec swayidle -w\
     timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
@@ -210,7 +215,7 @@ bindsym --whole-window --border $mod+shift+button5 resize grow width 5 px or 5 p
 # App shortcuts
 #
     bindsym $mod+n exec thunar
-    bindsym $mod+o exec firefox
+    bindsym $mod+o exec env MOZ_ENABLE_WAYLAND=1 firefox
 #
 # Screenshots
 #
